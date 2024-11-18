@@ -1,0 +1,11 @@
+Artifacts :
+
+1. Selenium-java
+2. testng
+3. log4j
+4. cucumber-java
+5. cucumber-testng
+6. cucumber-gerkin
+7. webdrivermanager
+8. allure-testng
+9. poi
