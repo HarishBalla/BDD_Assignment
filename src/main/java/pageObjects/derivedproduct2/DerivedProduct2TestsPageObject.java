@@ -4,6 +4,9 @@ import java.io.IOException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import com.opencsv.CSVWriter;
+
 import commons.BasePage;
 import pageUIs.CoreProductTests;
 import pageUIs.DerivedProduct2Tests;
@@ -31,16 +34,17 @@ public class DerivedProduct2TestsPageObject {
 	}
 	//getHyperlinksAddToCSV
 	
-	public static void getHyperlinksAddToCSV() {
+	public static void getHyperlinksAddToCSV() throws IOException {
 		String hyperlinks = BasePage.getAlllist(DerivedProduct2Tests.DP2_HYPERLINK_DYNAMIC);
+		String[] links=hyperlinks.split("");
+		
 		log.info("hyperlinks are : "+hyperlinks);
 		System.out.println("hyperlinks are : "+hyperlinks);
     	String fileName = "hyperlink.csv";
-//    	FileWriter writer = new FileWriter(fileName);
-//
-//        writer.write("csv : \n");
-//        writer.write(hyperlinks);
-//        writer.write("\n");
+    	FileWriter outputfile = new FileWriter(fileName);
+    	CSVWriter writer = new CSVWriter(outputfile); 
+        writer.writeNext(links);        
+        writer.close();
 	}
 	
 	public static void verifyDuplicates() {

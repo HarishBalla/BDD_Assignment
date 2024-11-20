@@ -1,5 +1,7 @@
 package stepsDefinition;
 
+import java.io.IOException;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,7 +27,7 @@ public class DerivedProduct2Tests {
 }
 
 @And("I get all the hyperlinks of the all the categories in the footer and add to CSV file")
-    public static void getHyperlinksAddToCSV() {
+    public static void getHyperlinksAddToCSV() throws IOException {
 	  	DerivedProduct2TestsPageObject.getHyperlinksAddToCSV();
 }
 
